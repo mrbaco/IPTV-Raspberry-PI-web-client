@@ -150,7 +150,7 @@ class core {
         $url = $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
 
-        if ($this->config['home'] != $url || !is_writable($this->root . '/config.json')) {
+        if ($this->config['home'] != $url[0] || !is_writable($this->root . '/config.json')) {
             if (!is_writable($this->root . '/config.json')) {
                 $this->setMessage('Файл config.json не доступен для записи!', 'warning');
             } else {
