@@ -13,7 +13,7 @@
     <p>
         У вас не хватает прав на запись в файл /dev/vchiq. Выполните команду:
         <div class="code">
-            sudo usermod -a -G video <?php echo posix_getpwuid(posix_geteuid()); ?>
+            sudo usermod -a -G video <?php $user = posix_getpwuid(posix_geteuid()); echo $user['name']; ?>
         </div>
     </p>
     <?php } ?>
