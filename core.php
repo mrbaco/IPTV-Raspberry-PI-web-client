@@ -8,7 +8,7 @@ class core {
 
     private $title = "Мой пульт";
 
-    private $page = "main";
+    private $page = "setup";
 
     private $message = false;
 
@@ -150,19 +150,19 @@ class core {
         $url = $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
 
-        if ($this->config['home'] != $url[0] || !is_writable($this->root . '/config.json')) {
-            if (!is_writable($this->root . '/config.json')) {
-                $this->setMessage('Файл config.json не доступен для записи!', 'warning');
-            } else {
-                $this->config = [
-                    'home' => $url[0],
-                    'list' => []
-                ];
+        $err = false;
 
-                if ($this->writePreferences() === false) {
-                    $this->setMessage('Не удалось обновить данные в файле config.json!', 'warning');
-                }
-            }
+        if (!isset($this->config['home']) || $this->config['home'] != $url[0] ||
+            !is_writable($this->root . '/config.json') ||
+            !is_writable('/dev/vchiq')) $err = true;
+
+        if ($err) {
+            $this->config['home'] = $url[0];
+
+            chmod(ROOT . '/run_player.sh', 0777);
+            chmod(ROOT . '/splash.sh', 0777);
+
+            $this->writePreferences();
 
             $this->setTitle('Первый запуск');
             $this->setTemplate('setup');

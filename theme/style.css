@@ -124,6 +124,11 @@ div.channel {
     background-color: #229754;
 }
 
+.code {
+    background: #eee;
+    padding: 16px;
+}
+
 .clear {
     clear: both;
 }
