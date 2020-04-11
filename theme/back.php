@@ -1,1 +1,1 @@
-<div class="back"><a href="<?php echo HOME; ?>">&larr; Мой пульт</a></div>
+<div class="back"><a href="<?php echo $this->getHome(); ?>">&larr; Мой пульт</a></div>

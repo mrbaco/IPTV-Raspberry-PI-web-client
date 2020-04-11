@@ -1,11 +1,12 @@
 <?php
 
 define ('ROOT', dirname(__file__));
-define ('HOME', '/iptv');
 
 include ROOT . '/core.php';
 
 $core = new core(ROOT);
+
+$core->setup();
 
 if (isset($_GET['r'])) {
     // настройки канала

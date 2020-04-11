@@ -2,9 +2,7 @@
 
 class core {
 
-    private $config = [
-        'list' => []
-    ];
+    private $config;
 
     private $root;
 
@@ -21,7 +19,7 @@ class core {
 
     // сохранить настройки
     public function writePreferences() {
-        file_put_contents($this->root . '/config.json', json_encode($this->config, JSON_UNESCAPED_UNICODE));
+        return file_put_contents($this->root . '/config.json', json_encode($this->config, JSON_UNESCAPED_UNICODE));
     }
 
     // получить настройки
@@ -142,6 +140,34 @@ class core {
         var_dump(shell_exec(getcwd() . '/run_player.sh ' . escapeshellarg($this->config['list'][$link]['url']) . ' 2>&1'));
     }
 
+    // получить относительный URL домашней страницы
+    public function getHome() {
+        return $this->config['home'];
+    }
+
+    // запустить установку (если отсутствует конфигурация)
+    public function setup() {
+        if (file_exists($this->root . '/config.json')) return;
+
+        $url = $_SERVER['REQUEST_URI'];
+        $url = explode('?', $url);
+
+        $this->config = [
+            'home' => $url[0],
+            'list' => []
+        ];
+
+        if ($this->writePreferences() === false) {
+            $this->setFormMessage('Файл config.json не создан!', 'warning');
+        }
+
+        $this->setTitle('Первый запуск');
+        $this->setTemplate('setup');
+
+        $this->loadPage();
+
+        die();
+    }
 }
 
 ?>
