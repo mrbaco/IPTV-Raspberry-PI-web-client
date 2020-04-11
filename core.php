@@ -153,14 +153,14 @@ class core {
         $err = false;
 
         if (!isset($this->config['home']) || $this->config['home'] != $url[0] ||
-            !is_writable($this->root . '/config.json') ||
+            (!is_writable($this->root . '/config.json') || !chmod($this->root . '/config.json', 0666)) ||
             !is_writable('/dev/vchiq')) $err = true;
 
         if ($err) {
             $this->config['home'] = $url[0];
 
-            chmod(ROOT . '/run_player.sh', 0777);
-            chmod(ROOT . '/splash.sh', 0777);
+            chmod($this->root . '/run_player.sh', 0777);
+            chmod($this->root . '/splash.sh', 0777);
 
             $this->writePreferences();
 
