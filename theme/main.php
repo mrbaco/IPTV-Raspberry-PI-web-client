@@ -1,4 +1,4 @@
-<?php echo $this->getFormMessage(); ?>
+<?php echo $this->getMessage(); ?>
 
 <div class="channels">
 

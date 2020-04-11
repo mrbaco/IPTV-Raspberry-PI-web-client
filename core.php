@@ -10,7 +10,7 @@ class core {
 
     private $page = "main";
 
-    private $formMessage;
+    private $message = false;
 
     public function __construct($root) {
         $this->root = $root;
@@ -121,13 +121,13 @@ class core {
     }
 
     // установить сообщение формы
-    public function setFormMessage($message, $class) {
-        $this->formMessage = sprintf('<div class="%s">%s</div>', $class, $message);
+    public function setMessage($message, $class) {
+        $this->message = sprintf('<div class="%s">%s</div>', $class, $message);
     }
 
     // получить сообщение формы
-    public function getFormMessage() {
-        return $this->formMessage;
+    public function getMessage() {
+        return $this->message;
     }
 
     // запустить канал
@@ -147,26 +147,26 @@ class core {
 
     // запустить установку (если отсутствует конфигурация)
     public function setup() {
-        if (file_exists($this->root . '/config.json')) return;
-
         $url = $_SERVER['REQUEST_URI'];
         $url = explode('?', $url);
 
-        $this->config = [
-            'home' => $url[0],
-            'list' => []
-        ];
+        if ($this->config['home'] != $url || !is_writable($this->root . '/config.json')) {
+            if (!is_writable($this->root . '/config.json')) {
+                $this->setMessage('Файл config.json не доступен для записи!', 'warning');
+            } else {
+                $this->config = [
+                    'home' => $url[0],
+                    'list' => []
+                ];
 
-        if ($this->writePreferences() === false) {
-            $this->setFormMessage('Файл config.json не создан!', 'warning');
+                if ($this->writePreferences() === false) {
+                    $this->setMessage('Не удалось обновить данные в файле config.json!', 'warning');
+                }
+            }
+
+            $this->setTitle('Первый запуск');
+            $this->setTemplate('setup');
         }
-
-        $this->setTitle('Первый запуск');
-        $this->setTemplate('setup');
-
-        $this->loadPage();
-
-        die();
     }
 }
 

@@ -20,8 +20,8 @@ if (isset($_GET['r'])) {
                     'url' => $_POST['url']
                 ]);
 
-                if ($r === true) $core->setFormMessage('Канал создан!', 'success');
-                else $core->setFormMessage($r['err'], 'warning');
+                if ($r === true) $core->setMessage('Канал создан!', 'success');
+                else $core->setMessage($r['err'], 'warning');
             }
 
             $core->setTemplate('channel_form');
@@ -36,8 +36,8 @@ if (isset($_GET['r'])) {
                     'url' => $_POST['url']
                 ]);
 
-                if ($r === true) $core->setFormMessage('Канал обновлен!', 'success');
-                else $core->setFormMessage($r['err'], 'warning');
+                if ($r === true) $core->setMessage('Канал обновлен!', 'success');
+                else $core->setMessage($r['err'], 'warning');
             }
 
             $core->setTemplate('channel_form');
@@ -49,7 +49,7 @@ if (isset($_GET['r'])) {
             // удаление
             if (isset($_GET['remove'])) {
                 if ($core->removeChannel($_GET['remove']))
-                    $core->setFormMessage('Канал удален!', 'success');
+                    $core->setMessage('Канал удален!', 'success');
             }
 
             $core->setTemplate('main');
