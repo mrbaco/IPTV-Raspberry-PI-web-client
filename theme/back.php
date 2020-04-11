@@ -1,0 +1,1 @@
+<div class="back"><a href="<?php echo HOME; ?>">&larr; Мой пульт</a></div>

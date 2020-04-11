@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 973.93 973.76"
+   id="icon_logo"
+   version="1.1"
+   sodipodi:docname="nauka.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata3769">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3767" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3765"
+     showgrid="false"
+     inkscape:zoom="0.24235951"
+     inkscape:cx="486.965"
+     inkscape:cy="486.88"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="icon_logo" />
+  <path
+     d="M674.71 265v443.81a9.56 9.56 0 01-9.48 9.47H535a9.55 9.55 0 01-9.47-9.47V562.06a9.48 9.48 0 00-9.48-9.64H458a9.58 9.58 0 00-9.47 9.64v146.75a9.56 9.56 0 01-9.48 9.47H308.87a9.56 9.56 0 01-9.47-9.47V265a9.55 9.55 0 019.47-9.47h130.21a9.56 9.56 0 019.48 9.47v146.87a9.55 9.55 0 009.47 9.47h58a9.45 9.45 0 009.48-9.47V265a9.55 9.55 0 019.47-9.47h130.25a9.56 9.56 0 019.48 9.47z"
+     id="path3760"
+     style="fill:#ffffff" />
+  <path
+     d="M973.93 486.79c0 269.1-218 487-487 487S0 755.89 0 486.79C0 217.87 218 0 487 0s486.93 217.87 486.93 486.79zm-43.77 0c0-244.67-198.52-443-443.19-443s-443.19 198.33-443.19 443C43.78 731.64 242.29 930 487 930s443.16-198.36 443.16-443.21z"
+     id="path3762"
+     style="fill:#ffffff" />
+</svg>

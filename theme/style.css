@@ -1,0 +1,163 @@
+* {
+    font: 16px/1.4 Verdana;
+    color: #444;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    text-decoration: underline;
+    margin: 26px 0 12px;
+    text-align: center;
+    font: 46px Verdana;
+    font-weight: bold;
+}
+
+form {
+    text-align: center;
+}
+
+input {
+    padding: 6px 12px;
+    outline: none;
+}
+
+a {
+    text-decoration: underline;
+    color: #0757A8;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.channels {
+    margin: 0 auto;
+    width: 1100px;
+    padding: 5px;
+}
+
+.control,
+.channel {
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    background: #fff center center no-repeat;
+    background-size: auto 60px;
+    width: calc(20% - 10px);
+    border-radius: 10px;
+    position: relative;
+    display: block;
+    height: 80px;
+    margin: 5px;
+    float: left;
+}
+
+.control {
+    background-size: 48px 48px;
+}
+
+.control.new {
+    background-image: url('images/plus.svg');
+}
+
+.control.preferences {
+    background-image: url('images/preferences.svg');
+}
+
+.channel:hover,
+.control:hover {
+    background-color: #fafafa;
+}
+
+.channel.selected {
+    background-color: #efefef;
+}
+
+.channel.selected:before {
+    background: url('images/tick.svg') no-repeat;
+    position: absolute;
+    border-right: none;
+    border-top: none;
+    height: 24px;
+    width: 24px;
+    content: '';
+    right: 6px;
+    top: 6px;
+}
+
+div.channel {
+    margin: 0 auto;
+    float: none;
+}
+
+.back {
+    text-align: center;
+    margin-top: 26px;
+}
+
+.back a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.success,
+.warning {
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    text-align: center;
+    padding: 16px 12px;
+    font-weight: bold;
+    margin: 12px auto;
+    color: #fff;
+    width: 260px;
+}
+
+.warning {
+    background-color: #EC5A57;
+}
+
+.success {
+    background-color: #229754;
+}
+
+.clear {
+    clear: both;
+}
+
+@media all and (max-width: 1100px) {
+    .channels {
+        min-width: 320px;
+        width: auto;
+    }
+}
+
+@media all and (max-width: 960px) and (min-width: 761px) {
+    .control,
+    .channel {
+        width: calc(25% - 10px);
+    }
+}
+
+@media all and (max-width: 760px) and (min-width: 361px) {
+    .control,
+    .channel {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media all and (max-width: 640px) and (min-width: 361px) {
+    .control,
+    .channel {
+        width: calc(33.33% - 10px);
+    }
+}
+
+@media all and (max-width: 360px) {
+    .control,
+    .channel {
+        width: calc(50% - 10px);
+    }
+}
