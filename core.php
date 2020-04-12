@@ -8,7 +8,7 @@ class core {
 
     private $title = "Мой пульт";
 
-    private $page = "setup";
+    private $page = "main";
 
     private $message = false;
 
