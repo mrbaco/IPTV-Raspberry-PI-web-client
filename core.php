@@ -137,7 +137,7 @@ class core {
         if (!$this->isChannel($link)) return false;
         if ($this->config['list'][$link]['url'] == '') $this->config['list'][$link]['url'] = getcwd() . '/theme/images/favicon.png';
         
-        var_dump(shell_exec(getcwd() . '/run_player.sh ' . escapeshellarg($this->config['list'][$link]['url']) . ' 2>&1'));
+        shell_exec(getcwd() . '/run_player.sh ' . escapeshellarg($this->config['list'][$link]['url']));
     }
 
     // получить относительный URL домашней страницы
