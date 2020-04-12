@@ -159,9 +159,9 @@ class core {
         if ($err) {
             $this->config['home'] = $url[0];
 
-            chmod($this->root . '/run_player.sh', 0777);
+            chmod($this->root . '/run_player.sh', 0755);
             chmod($this->root . '/config.json', 0666);
-            chmod($this->root . '/splash.sh', 0777);
+            chmod($this->root . '/splash.sh', 0755);
 
             $this->writePreferences();
 

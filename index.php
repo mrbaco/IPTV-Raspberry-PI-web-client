@@ -17,6 +17,7 @@ if (isset($_GET['r'])) {
                 $r = $core->createChannel(substr(md5(time() . rand(11111, 99999)), -10), [
                     'name' => $_POST['name'],
                     'image' => $_POST['image'],
+                    'background' => $_POST['background'],
                     'url' => $_POST['url']
                 ]);
 
@@ -33,6 +34,7 @@ if (isset($_GET['r'])) {
                 $r = $core->editChannel($_GET['link'], [
                     'name' => $_POST['name'],
                     'image' => $_POST['image'],
+                    'background' => $_POST['background'],
                     'url' => $_POST['url']
                 ]);
 
