@@ -11,11 +11,15 @@
     <?php } ?>
     <?php if (!is_writable('/dev/vchiq')) { ?>
     <p>
-        У вас не хватает прав на запись в файл /dev/vchiq. Выполните команду:
+        У вас не хватает прав на запись в файл /dev/vchiq. Выполните команду и перезагрузите устройство:
         <div class="code">
-            sudo usermod -a -G video <?php $user = posix_getpwuid(posix_geteuid()); echo $user['name']; ?>
+            sudo usermod -a -G video "<?php $user = posix_getpwuid(posix_geteuid()); echo $user['name']; ?>"
         </div>
     </p>
     <?php } ?>
+    <p>
+        Права на чтение и запись файла config.json, а также на запуск файлов run_player.sh и splash.sh были установлены автоматически.<br />
+        В случае, если что-то будет не работать, рекомендуется проверить их в первую очередь.
+    </p>
     <p>Для продолжения работы &ndash; перезагрузите страницу.</p>
 </div>
